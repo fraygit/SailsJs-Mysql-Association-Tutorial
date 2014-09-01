@@ -1,4 +1,4 @@
-# Sails JS Guide
+# Sails JS and Waterline Association
 
 For a few weeks now I have been tinkering node.js and in which I am highly considering using on our next project. I reckon node will be the future of web development. Hunting for a MVC framework in node, I stumble upon sails.js. It looks promising and I’ve been following its development ever since. 
 Sails.js is still on its early stage and with the release of version 0.10.x recently, I got excited on one of its feature, “Associations”!
@@ -61,7 +61,7 @@ Sails comes with Waterline ORM. To interact with the database, we’ll need an a
 > npm install sails-mysql
 ```
 
-Configure the database connection in config/connections.js
+Configure the database connection in *config/connections.js*
 ```javascript
   someMysqlServer: {
     adapter: 'sails-mysql',
@@ -81,7 +81,7 @@ Creating the model is easy, simply use the generator:
 	> sails generate model Driver 
 ```
 
-This will create a file *Driver.j*s under *api/Mdels*. Add the fields under the attribute object:
+This will create a file *Driver.js* under *api/Models*. Add the fields under the attribute object:
 
 ```javascript
 module.exports = {
