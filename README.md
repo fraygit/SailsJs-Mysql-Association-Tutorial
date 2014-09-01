@@ -94,11 +94,14 @@ module.exports = {
 };
 ```
 
-List of data type http://sailsjs.org/#/documentation/concepts/ORM/Attributes.html
+You can checkout the list of data type on their documentation http://sailsjs.org/#/documentation/concepts/ORM/Attributes.html
 
 ##Association
 
-Association is a feature in Waterline wherein you can associate a model with another model across multiple data stores. To specify which data store of the model, simply specify the connection:
+Association is a feature in Waterline wherein you can associate a model with another model across multiple data stores. To me, this is the most
+important feature, as this is where you would design the structure of your data.
+
+To specify which data store of the model, simply specify the connection:
 
 ```javascript
 module.exports = {
