@@ -6,7 +6,7 @@ In this article, I wanted to share to you a short guide on how to get going with
 
 ## Node + Sails
 
-To start, you’ll need node.js in your machine. Download and install node from http://nodejs.org/ if haven’t already. Then to start using sails you need to grab the package. To do this, go to your node js console and run
+To start, you’ll need node.js in your machine. Download and install node from [http://nodejs.org/] if haven’t already. Then to start using sails you need to grab the package. To do this, go to your node js console and run
 
 ```javascript
 > npm install –g sails
@@ -35,7 +35,7 @@ port: <port number>
 ```
 
 ## Controller
-Sails comes with generator for creating controller and model. Looking at their trello road map https://trello.com/b/cGzNVE0b/sails-roadmap looks like they’re working on including mocha test in the generator which should be handy. To create a controller:
+Sails comes with generator for creating controller and model. Looking at their trello road map [https://trello.com/b/cGzNVE0b/sails-roadmap] looks like they’re working on including mocha test in the generator which should be handy. To create a controller:
 
 ```javascript
 	> sails generate controller Store
@@ -94,7 +94,7 @@ module.exports = {
 };
 ```
 
-List of data type http://sailsjs.org/#/documentation/concepts/ORM/Attributes.html
+List of data type [http://sailsjs.org/#/documentation/concepts/ORM/Attributes.html]
 Association
 
 Association is a feature in Waterline wherein you can associate a model with another model across multiple data stores. To specify which data store of the model, simply specify the connection:
@@ -257,7 +257,7 @@ Which spits out:
 One to may associations
 You can also associate one model with many other models. To do this, take for example, a scenario where you have a store which can have several customers:
 
-Store.js
+*Store.js*
 
 ```javascript
 module.exports = {
@@ -277,7 +277,7 @@ module.exports = {
 };
 ```
 
-Customer.js
+*Customer.js*
 
 ```javascript
 module.exports = {
