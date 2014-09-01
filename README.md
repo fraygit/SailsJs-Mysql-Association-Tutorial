@@ -28,7 +28,7 @@ Then type the command:
 ```javascript
 	> sails lift
 ```	
-Easy as that, you now have a sails.js project running! By default, the project will run on port 1337. You can change the port in config\local.js, add the snippet below under module.export:
+Easy as that, you now have a sails.js project running! By default, the project will run on port 1337. You can change the port in *config\local.js*, add the snippet below under module.export:
 
 ```javascript
 port: <port number>
@@ -51,9 +51,9 @@ module.exports = {
 }
 ```
 
-The code will be accessible on the url /Store/HelloWorld.
+The code will be accessible through the url */Store/HelloWorld*.
 
-MySQL Adapter
+##MySQL Adapter
 
 Sails comes with Waterline ORM. To interact with the database, we’ll need an adapter, for this instance will add a mysql adpater.
 
@@ -114,7 +114,7 @@ module.exports = {
 };
 ```
 
-One to One Association
+##One to One Association
 
 Take for example we wanted to create a Car that can only be linked one driver and that driver can only be link to a single Car. We’ll generate the Car model:
 
