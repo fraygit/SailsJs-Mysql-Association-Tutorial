@@ -34,17 +34,22 @@ Easy as that, you now have a sails.js project running! By default, the project w
 port: <port number>
 ```
 
-### Controller
+## Controller
 Sails comes with generator for creating controller and model. Looking at their trello road map https://trello.com/b/cGzNVE0b/sails-roadmap looks like they’re working on including mocha test in the generator which should be handy. To create a controller:
+
+```javascript
 	> sails generate controller Store
+```
 
 This will create a StoreController.js under api/controllers. So, to add an action, simply add a function, e.g.:
 
+```javascript
 module.exports = {
 	HelloWorld: function (req, res){
 		return res.json({Hello: 'Hello World!'});
 	}
 }
+```
 
 The code will be accessible on the url /Store/HelloWorld.
 
@@ -52,8 +57,12 @@ MySQL Adapter
 
 Sails comes with Waterline ORM. To interact with the database, we’ll need an adapter, for this instance will add a mysql adpater.
 
+```javascript
 > npm install sails-mysql
+```
+
 Configure the database connection in config/connections.js
+```javascript
   someMysqlServer: {
     adapter: 'sails-mysql',
     host: 'localhost',
@@ -62,12 +71,19 @@ Configure the database connection in config/connections.js
     password: 'Passw0rd123', 
     database: 'prototypeDB'
   },
-Model
+```
+
+## Model
+
 Creating the model is easy, simply use the generator:
+
+```javascript
 	> sails generate model Driver 
+```
 
 This will create a file Driver.js under api/Mdels. Add the fields under the attribute object:
 
+```javascript
 module.exports = {
 
   attributes: {
@@ -76,12 +92,14 @@ module.exports = {
 
   }
 };
+```
 
 List of data type http://sailsjs.org/#/documentation/concepts/ORM/Attributes.html
 Association
 
 Association is a feature in Waterline wherein you can associate a model with another model across multiple data stores. To specify which data store of the model, simply specify the connection:
 
+```javascript
 module.exports = {
 
   connection: 'someMysqlServer',
@@ -94,12 +112,19 @@ module.exports = {
 
   }
 };
+```
 
 One to One Association
 
 Take for example we wanted to create a Car that can only be linked one driver and that driver can only be link to a single Car. We’ll generate the Car model:
+
+```javascript
 > sails generate model Car
+```
+
 Add the fields:
+
+```javascript
 module.exports = {
 connection: 'someMysqlServer',
   attributes: {
@@ -118,7 +143,11 @@ connection: 'someMysqlServer',
   	}
   }
 };
+```
+
 Notice the last attribute driver, we associated the model to the Driver model. We need modify the Driver model to add the association to the car model.
+
+```javascript
 module.exports = {
 connection: 'someMysqlServer',
   attributes: {
@@ -180,14 +209,19 @@ Which will spits out:
     }
   ]
 }
+```
 
 Or you can retrieve the other way around, retrieving the Driver and populate the car:
+```javascript
 	viewDriver: function(req, res){
 		Driver.find().populate('car').exec(function(e, r){
 			return res.json({Car: r});
 		});
 	}	
+```	
 Which spits out:
+
+```javascript
 {
   "Car": [
     {
@@ -207,10 +241,14 @@ Which spits out:
     }
   ]
 }
+```
 
 One to may associations
 You can also associate one model with many other models. To do this, take for example, a scenario where you have a store which can have several customers:
+
 Store.js
+
+```javascript
 module.exports = {
 
   connection: 'someMysqlServer',
@@ -226,8 +264,11 @@ module.exports = {
   	}
   }
 };
+```
 
 Customer.js
+
+```javascript
 module.exports = {
 
   connection: 'someMysqlServer',
@@ -244,9 +285,11 @@ module.exports = {
 
   }
 };
+```
 
 Then you can add the customers using the store id
 
+```javascript
 	addStoreCustomer: function(req, res){
 		Store.create({Name: 'Sari Sari Store'}).exec(function(e,r){
 			Customer.create({Name: 'Pedro', store: r.id}).exec(function(err, result){
@@ -256,15 +299,21 @@ Then you can add the customers using the store id
 			});
 		});
 	},
+```
 
 Then retrieve the same way by using populate function:
+
+```javascript
 	viewStore: function(req, res){
 		Store.find().populate('customers').exec(function (err, result){
 			res.json({Result: result});
 		});
 	}
+```
 
 Spits out 
+
+```javascript
 {
   "Result": [
     {
@@ -292,3 +341,4 @@ Spits out
   ]
 }
 
+```
