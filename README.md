@@ -160,7 +160,11 @@ connection: 'someMysqlServer',
   	}  	
   }
 };
+```
+
 Now we’ll add a Car controller:
+
+```javascript
 > sails generate controller Car
 Insert the code in CarController.js
 		add: function(req, res){
@@ -178,18 +182,25 @@ Insert the code in CarController.js
 			});
 		});
 	}
+```
+
 We now have a bit of chained callbacks. What the code does is it:
 1.	Create Driver
 2.	Create the car then associate the driver
 driver: result.id
 3.	Update the Driver to associate with the Car
 Now retrieving the Car model, you can use the populate function to get the associated model:
+
+```javascript
 	viewCar: function(req, res){
 		Car.find().populate('driver').exec(function(e, r){
 			return res.json({Car: r});
 		});
 	},
+```
+
 Which will spits out:
+```javascript
 {
   "Car": [
     {
