@@ -25,10 +25,16 @@ This command will create the project folder together with the files. Go to the d
 ```
 
 Then type the command:
+```javascript
 	> sails lift
+```	
 Easy as that, you now have a sails.js project running! By default, the project will run on port 1337. You can change the port in config\local.js, add the snippet below under module.export:
+
+```javascript
 port: <port number>
-Controller
+```
+
+### Controller
 Sails comes with generator for creating controller and model. Looking at their trello road map https://trello.com/b/cGzNVE0b/sails-roadmap looks like they’re working on including mocha test in the generator which should be handy. To create a controller:
 	> sails generate controller Store
 
