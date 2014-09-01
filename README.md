@@ -167,7 +167,10 @@ Now we’ll add a Car controller:
 
 ```javascript
 > sails generate controller Car
+```
 Insert the code in CarController.js
+
+```javascript
 		add: function(req, res){
 		var driver = {Name: 'Juan'};
 		Driver.create(driver).exec(function(err, result){
@@ -201,7 +204,7 @@ Now retrieving the Car model, you can use the populate function to get the assoc
 	},
 ```
 
-Which will spits out:
+This will spits out:
 ```javascript
 {
   "Car": [
@@ -232,7 +235,7 @@ Or you can retrieve the other way around, retrieving the Driver and populate the
 		});
 	}	
 ```	
-Which spits out:
+Which will spits out:
 
 ```javascript
 {
@@ -256,7 +259,8 @@ Which spits out:
 }
 ```
 
-One to may associations
+## One to may associations
+
 You can also associate one model with many other models. To do this, take for example, a scenario where you have a store which can have several customers:
 
 **Store.js**
