@@ -95,7 +95,8 @@ module.exports = {
 ```
 
 List of data type http://sailsjs.org/#/documentation/concepts/ORM/Attributes.html
-Association
+
+##Association
 
 Association is a feature in Waterline wherein you can associate a model with another model across multiple data stores. To specify which data store of the model, simply specify the connection:
 
@@ -185,11 +186,12 @@ Insert the code in CarController.js
 ```
 
 We now have a bit of chained callbacks. What the code does is it:
+
 1.	Create Driver
 2.	Create the car then associate the driver
-driver: result.id
+..driver: result.id
 3.	Update the Driver to associate with the Car
-Now retrieving the Car model, you can use the populate function to get the associated model:
+..Now retrieving the Car model, you can use the populate function to get the associated model:
 
 ```javascript
 	viewCar: function(req, res){
