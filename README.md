@@ -189,9 +189,9 @@ We now have a bit of chained callbacks. What the code does is it:
 
 1.	Create Driver
 2.	Create the car then associate the driver
-..driver: result.id
+*driver: result.id
 3.	Update the Driver to associate with the Car
-..Now retrieving the Car model, you can use the populate function to get the associated model:
+*Now retrieving the Car model, you can use the populate function to get the associated model:
 
 ```javascript
 	viewCar: function(req, res){
