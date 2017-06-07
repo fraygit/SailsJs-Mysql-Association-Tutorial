@@ -274,7 +274,7 @@ module.exports = {
   connection: 'someMysqlServer',
 
   attributes: {
-  	name: {
+  	Name: {
   		type: 'string'
   	},
 
@@ -353,7 +353,7 @@ Spits out
           "updatedAt": "2014-09-01T00:30:58.000Z"
         }
       ],
-      "name": null,
+      "Name": 'Sari Sari Store',
       "id": 1,
       "createdAt": "2014-09-01T00:30:58.000Z",
       "updatedAt": "2014-09-01T00:30:58.000Z"
